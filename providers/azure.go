@@ -21,7 +21,7 @@ func NewAzureProvider(p *ProviderData) *AzureProvider {
 	if p.ProfileURL == nil || p.ProfileURL.String() == "" {
 		p.ProfileURL = &url.URL{
 			Scheme:   "https",
-			Host:     "idoco360train.api.crm9.dynamics.com",
+			Host:     "login.windows.net",
 			Path:     "/me",
 			RawQuery: "api-version=1.6",
 
