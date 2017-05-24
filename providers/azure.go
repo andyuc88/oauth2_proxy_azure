@@ -21,7 +21,7 @@ func NewAzureProvider(p *ProviderData) *AzureProvider {
 	if p.ProfileURL == nil || p.ProfileURL.String() == "" {
 		p.ProfileURL = &url.URL{
 			Scheme:   "https",
-			Host:     "graph.windows.net",
+			Host:     "idoco360train.api.crm9.dynamics.com",
 			Path:     "/me",
 			RawQuery: "api-version=1.6",
 		}
@@ -29,7 +29,7 @@ func NewAzureProvider(p *ProviderData) *AzureProvider {
 	if p.ProtectedResource == nil || p.ProtectedResource.String() == "" {
 		p.ProtectedResource = &url.URL{
 			Scheme: "https",
-			Host:   "graph.windows.net",
+			Host:   "idoco360train.api.crm9.dynamics.com/",
 		}
 	}
 	if p.Scope == "" {
@@ -42,19 +42,19 @@ func NewAzureProvider(p *ProviderData) *AzureProvider {
 func (p *AzureProvider) Configure(tenant string) {
 	p.Tenant = tenant
 	if tenant == "" {
-		p.Tenant = "common"
+		p.Tenant = "idocO360.onmicrosoft.com"
 	}
 
 	if p.LoginURL == nil || p.LoginURL.String() == "" {
 		p.LoginURL = &url.URL{
 			Scheme: "https",
-			Host:   "login.microsoftonline.com",
+			Host:   "login.windows.net",
 			Path:   "/" + p.Tenant + "/oauth2/authorize"}
 	}
 	if p.RedeemURL == nil || p.RedeemURL.String() == "" {
 		p.RedeemURL = &url.URL{
 			Scheme: "https",
-			Host:   "login.microsoftonline.com",
+			Host:   "login.windows.net",
 			Path:   "/" + p.Tenant + "/oauth2/token",
 		}
 	}
