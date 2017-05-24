@@ -21,9 +21,7 @@ func NewAzureProvider(p *ProviderData) *AzureProvider {
 	if p.ProfileURL == nil || p.ProfileURL.String() == "" {
 		p.ProfileURL = &url.URL{
 			Scheme:   "https",
-			Host:     "idoco360train.api.crm9.dynamics.com",
-			Path:     "",
-			RawQuery: "",
+			Host:     "idoco360train.api.crm9.dynamics.com"
 		}
 	}
 	if p.ProtectedResource == nil || p.ProtectedResource.String() == "" {
