@@ -82,11 +82,11 @@ func (p *ProviderData) GetLoginURL(redirectURI, state string) string {
 	var a url.URL
 	a = *p.LoginURL
 	params, _ := url.ParseQuery(a.RawQuery)
-	params.Set("redirect_uri", redirectURI)
-	params.Set("approval_prompt", p.ApprovalPrompt)
-	params.Add("scope", p.Scope)
+	params.Set("redirect_uri", redurectURI)
+	//params.Set("approval_prompt", p.ApprovalPrompt)
+	//params.Add("scope", "")
 	params.Set("client_id", p.ClientID)
-	params.Set("response_type", "code")
+	params.Set("response_type", "ID_token")
 	params.Add("state", state)
 	a.RawQuery = params.Encode()
 	return a.String()
